@@ -12,6 +12,42 @@ function analizar() {
 	res.innerHTML += "<br>Cadenas concatenadas: "+cadena1+cadena2;
 	res.innerHTML += pcad1?"":"<br>Cadena 1 invertida: "+invertir(cadena1);
 	res.innerHTML += pcad2?"":"<br>Cadena 2 invertida: "+invertir(cadena2);
+
+	res.innerHTML += "<br>Prefijos de Cadena 1:";
+	for(var i = 0; i <= cadena1.length; i++)
+		res.innerHTML += "<br>P"+i+": "+cadena1.substring(0,i);
+
+	res.innerHTML += "<br>Prefijos de Cadena 2:";
+	for(var i = 0; i <= cadena2.length; i++)
+		res.innerHTML += "<br>P"+i+": "+cadena2.substring(0,i);
+	
+	res.innerHTML += "<br>Sufijos de Cadena 1:";
+	for(var i = cadena1.length; i >= 0; i--)
+		res.innerHTML += "<br>S"+(cadena1.length - i)+": "+cadena1.substring(i,cadena1.length);
+
+	res.innerHTML += "<br>Sufijos de Cadena 2:";
+	for(var i = cadena2.length; i >= 0; i--)
+		res.innerHTML += "<br>S"+(cadena2.length - i)+": "+cadena2.substring(i,cadena2.length);
+
+	res.innerHTML += "<br>Subcadenas de la Cadena 1: "
+	for(var i = 0; i <= cadena1.length; i++){
+		for(var j = i+1; j <= cadena1.length; j++){
+			res.innerHTML += "<br>"+cadena1.substring(i,j);
+		}
+		res.innerHTML += "<br>";
+	}
+
+	res.innerHTML += "<br>Subcadenas de la Cadena 2: "
+	for(var i = 0; i <= cadena2.length; i++){
+		for(var j = i+1; j <= cadena2.length; j++){
+			res.innerHTML += "<br>"+cadena2.substring(i,j);
+		}
+		res.innerHTML += "<br>";
+	}
+
+	res.innerHTML += "(Cadena 1)+";
+	for(var n = 0; n <= 10; n++)
+		res.innerHTML += "<br>jue"
 }
 function palindromos(cad) {
 	for (var i = 0, j = cad.length -1; i <= cad.length; i++, j--) {
@@ -30,5 +66,4 @@ function invertir(cad) {
 		reversa += cad[i];
 	}
 	return reversa;
-	alert(reversa);
 }
