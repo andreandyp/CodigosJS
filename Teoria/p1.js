@@ -1,6 +1,10 @@
 function analizar() {
 	var cadena1 = document.getElementById('cadena1').value.toLowerCase();
 	var cadena2 = document.getElementById('cadena2').value.toLowerCase();
+	var nclausuras = document.getElementById('claus').value;
+	if(!nclausuras || nclausuras > 100){
+		nclausuras = 10;
+	}
 	var res = document.getElementById('res');
 	res.innerHTML = "Análisis de cadenas: ";
 	var pcad1 = palindromos(cadena1);
@@ -30,24 +34,23 @@ function analizar() {
 		res.innerHTML += "<br>S"+(cadena2.length - i)+": "+cadena2.substring(i,cadena2.length);
 
 	res.innerHTML += "<br>Subcadenas de la Cadena 1: "
-	for(var i = 0; i <= cadena1.length; i++){
-		for(var j = i+1; j <= cadena1.length; j++){
-			res.innerHTML += "<br>"+cadena1.substring(i,j);
-		}
-		res.innerHTML += "<br>";
-	}
+	res.innerHTML += subcadenas(cadena1);
+	res.innerHTML += "Subcadenas de la Cadena 2: "
+	res.innerHTML += subcadenas(cadena2);
 
-	res.innerHTML += "<br>Subcadenas de la Cadena 2: "
-	for(var i = 0; i <= cadena2.length; i++){
-		for(var j = i+1; j <= cadena2.length; j++){
-			res.innerHTML += "<br>"+cadena2.substring(i,j);
-		}
-		res.innerHTML += "<br>";
-	}
-
-	res.innerHTML += "(Cadena 1)+";
-	for(var n = 0; n <= 10; n++)
-		res.innerHTML += "<br>jue"
+	res.innerHTML += "(Cadena 1)+<br>";
+	res.innerHTML += clausuras(cadena1,0,nclausuras);
+	res.innerHTML += "(Cadena 1)*<br>";
+	res.innerHTML += clausuras(cadena1,-1,nclausuras);
+	res.innerHTML += "(Cadena 1)?<br>";
+	res.innerHTML += clausuras(cadena1,-1,0);
+	
+	res.innerHTML += "(Cadena 2)+<br>";
+	res.innerHTML += clausuras(cadena2,0,nclausuras);
+	res.innerHTML += "(Cadena 2)*<br>";
+	res.innerHTML += clausuras(cadena2,-1,nclausuras);
+	res.innerHTML += "(Cadena 2)?<br>";
+	res.innerHTML += clausuras(cadena2,-1,0);
 }
 function palindromos(cad) {
 	for (var i = 0, j = cad.length -1; i <= cad.length; i++, j--) {
@@ -66,4 +69,23 @@ function invertir(cad) {
 		reversa += cad[i];
 	}
 	return reversa;
+}
+function subcadenas(cad) {
+	var sub = "";
+	for(var i = 0; i <= cad.length; i++){
+		for(var j = i+1; j <= cad.length; j++){
+			sub += "<br>"+cad.substring(i,j);
+		}
+	}
+	return sub;
+}
+function clausuras(cad,inicio,fin) {
+	var cadenas = "";
+	for (var i = inicio; i <= fin; i++) {
+		for (var j = 0; j <= i; j++) {
+			cadenas += cad;
+		}
+		cadenas += "<br>";
+	}
+	return cadenas;
 }
