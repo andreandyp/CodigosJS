@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Práctica 2</title>
+	<script type="text/javascript" src="p2.js"></script>
+	<style type="text/css">
+		#principal{
+			position: fixed;
+			top: 0;
+			left: 10%%;
+			width: 40%;
+		}
+		#resultados{
+			position: fixed;
+			left: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div id="principal">
+		<h3>¡Prueba a validar tu CURP!</h3>
+		<p>Ingresa al menos 3 CURP válidos y 3 no válidos</p>
+		<input type="text" name="" id="prueba">
+		<button onclick="validarExpreg(document.getElementById('prueba').value)">Validar cadena con la expreg</button>
+	</div>
+	<div id="resultados"></div>
+</body>
+</html>
