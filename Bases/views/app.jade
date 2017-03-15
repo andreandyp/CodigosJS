@@ -1,0 +1,18 @@
+extends base
+block contenido
+    h3 #{nombre}
+    h5 #{vendedor}
+    p Acerca de esta app: #{desc}
+    p Versión: #{version}
+    p Palabras clave: #{intereses}
+
+    
+    for coment in comentarios
+        h4= coment.usuario
+        em= coment.fecha
+        br
+        if coment.voto === true
+            strong= "Me gusta"
+        else
+            strong= "No me gusta"
+        p= coment.reseña
