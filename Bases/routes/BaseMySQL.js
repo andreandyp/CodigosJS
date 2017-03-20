@@ -5,7 +5,6 @@ var conexion = mysql.createConnection({
     password: "Andy94",
     database: "tienda"
 });
-
 module.exports = {
     conexion: function(){
         if(arguments[0] === true)

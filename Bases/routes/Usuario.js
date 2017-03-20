@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var base = require("./baseM");
+var base = require("./BaseMySQL");
 
 router.get("/",function(req,res,next){
     base.conexion(true);
