@@ -1,19 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var base = require("./BaseMySQL");
 
 router.get("/",function(req,res,next){
-    base.conexion(true);
-    var datos = {titulo: "Hola",nombre: "Gisela",usuario: "andreandyp"}
-    res.render("usuario",datos);
+    console.log("Informacion");
+    console.log(req.session.info.id);
+    console.log(req.session.info.nombre);
+    console.log(req.session.info.correo);
+    res.render("usuario",{nombre: "Andy"});
 });
 
-router.post("/subir",function(req,res){
+/*router.post("/subir",function(req,res){
     console.log(req.body.valor);
-})
-
-/*router.get("/cosa",function(req,res){
-    res.render("usuario",{titulo: "hue",nombre: "Sirve"});
 });*/
 
 module.exports = router;

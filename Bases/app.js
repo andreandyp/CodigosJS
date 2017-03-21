@@ -36,9 +36,20 @@ app.use('/usuario', usuario);
 app.use("/aplicacion",aplicacion);
 
 app.get('/facebook', passport.authenticate('facebook',{scope: ["public_profile","email","user_about_me","user_birthday"]}));
-app.get('/facebook/listo', passport.authenticate('facebook',
-  { successRedirect: '/', 
-    failureRedirect: '/usuario' }));
+/*app.get('/facebook/listo',passport.authenticate("facebook",{
+  successRedirect: '/',
+  failureRedirect: '/usuario'
+}));*/
+
+app.get('/facebook/listo',function(req,res){
+  passport.authenticate("facebook",function(error,usuario,info){
+    if(!usuario){
+      req.session.info = info;
+      res.redirect("/usuario");
+    }else{
+    }
+  })(req,res);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
