@@ -2,11 +2,24 @@
     <head>
         <meta charset="utf-8">
         <title>Práctica 3 teoría</title>
+        <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="p3.js"></script>
     </head>
     <body>
         <h3>Autómata</h3>
-        <ul>
-            <li></li>
-        </ul>
+        <p>Da click en ver para desplegar la información del autómata. Puedes insertar el nombre de tu propio archivo JSON para ver tu propio autómata</p>
+        <input type="text" id="archivo" value="p3.json">
+        <input type="button" value="Ver" id="ver">
+        <br>
+
+        <aside><h3>Estructura</h3>{
+        <br>Q:["estados separados por comas"],
+        <br>A:["Símbolos del alfabeto separados por comas"],
+        <br>I:"Estado inicial",
+        <br>F:["Estados finales separados por comas"],
+        <br>T:{<br>"Estado 1":{"simbolo":["estados"]},<br>"Estado 2":{"simbolo":["estados"]}
+        <br>}<br>}</aside>
+        
     </body>
 </html>
