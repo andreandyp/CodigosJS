@@ -13,6 +13,14 @@ function S(cadena){
     var n = A(cadena,0);
     var m = B(cadena,n+1);
     var k = A(cadena,m+1);
+    //Si las derivaciones de m son diferentes a las derivaciones de K
+    //Caracteres desde donde empieza m - caracteres que ha contado desde n
+    //Caracteres desde donde empieza k - caracteres que ha contado desde m
+    if ((m-n)+n !== (k-m)) {
+        alert("Cadena inválida");
+    }else{
+        alert("Derivaciones sobre A: "+n+"\nDerivaciones sobre B: "+(m-n)+"\nDerivaciones sobre A: "+(k-m));
+    }
 }
 
 function A(cadena,pos){
