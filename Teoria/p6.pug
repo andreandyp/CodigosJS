@@ -1,0 +1,41 @@
+doctype html
+html    
+    head
+        title Práctica 6 teoría
+        script(src="p6.js")
+    body
+        h1 Autómatas de pila
+        p Ingresa la séptupla del Autómatas (E,L y F separados por comas);
+        label Estados (Q):
+        input(type="text" id="Q")
+        br
+        label Alfabeto de entrada (E):
+        input(type="text" id="E")
+        br
+        label Alfabeto de la pila (L):
+        input(type="text" id="L")
+        br
+        input(type="button" value="Agregar mas transiciones" onclick="masTrans()")
+        br
+        label Transiciones de la forma: 
+        br
+        label ESTANT,CINTA,PILA,ESTSIG,METERP,PILA
+        br
+        label Pon "p" en vez de landa y "p,p" para sacar de la pila (S):
+        br
+        input(type="text" id="S1")
+        br
+        label Estado inicial (q0):
+        input(type="text" id="q0")
+        br
+        label Estados finales (F):
+        input(type="text" id="F")
+        br
+        label Símbolo inicial de la pila (Z0):
+        input(type="text" id="Z0")
+        br
+        br
+        label Ingresa una cadena de texto para probarla
+        input(type="text" id="cadena")
+        br
+        input(type="button" value="Ejecutar autómata" onclick="verif()")

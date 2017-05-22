@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>   
+  <head>
+    <title>Práctica 6 teoría</title>
+    <script src="p6.js"></script>
+  </head>
+  <body>
+    <h1>Autómatas de pila</h1>
+    <p>Ingresa la séptupla del Autómatas (E,L y F separados por comas);</p>
+    <label>Estados (Q):</label>
+    <input type="text" id="Q"><br>
+    <label>Alfabeto de entrada (E):</label>
+    <input type="text" id="E"><br>
+    <label>Alfabeto de la pila (L):</label>
+    <input type="text" id="L"><br>
+    <input type="button" value="Agregar mas transiciones" onclick="masTrans()"><br>
+    <label>Transiciones de la forma: </label><br>
+    <label>ESTANT,CINTA,PILA,ESTSIG,METERP,PILA</label><br>
+    <label>Pon "p" en vez de landa y "p,p" para sacar de la pila (S):</label><br>
+    <input type="text" id="S1"><br>
+    <label>Estado inicial (q0):</label>
+    <input type="text" id="q0"><br>
+    <label>Estados finales (F):</label>
+    <input type="text" id="F"><br>
+    <label>Símbolo inicial de la pila (Z0):</label>
+    <input type="text" id="Z0"><br><br>
+    <label>Ingresa una cadena de texto para probarla</label>
+    <input type="text" id="cadena"><br>
+    <input type="button" value="Ejecutar autómata" onclick="verif()">
+  </body>
+</html>
