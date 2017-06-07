@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Proyecto final: Máquina de Turing</title>
+    <script src="jquery-3.1.1.min.js"></script>
     <script src="turing.js"></script>
   </head>
   <body>
     <h1>Máquina de Turing</h1>
     <label for="cadena">Ingresa una cadena para validarla</label>
-    <input type="text" id="cadena">
-    <input type="button" value="Validar cadena" onclick="ejecutar()">
+    <input id="cadena" type="text">
+    <input id="ejecutar" type="button" value="Validar cadena">
+    <p id="salida"></p>
   </body>
 </html>
