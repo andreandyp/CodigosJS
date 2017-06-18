@@ -5,9 +5,14 @@ html
         title Proyecto final: Máquina de Turing
         script(src="jquery-3.1.1.min.js")
         script(src="turing.js")
+        link(rel="stylesheet" href="bootstrap.min.css")
     body
-        h1 Máquina de Turing
-        label(for="cadena") Ingresa una cadena para validarla
-        input#cadena(type="text")
-        input#ejecutar(type="button" value="Validar cadena")
-        p#salida
+        div.container
+            div.row
+                div.col-sm-6
+                    h1 Máquina de Turing
+                    label(for="cadena") Ingresa una cadena para validarla
+                    input#cadena(type="text")
+                    input#ejecutar.btn.btn-default(type="button" value="Validar cadena")
+                div.col-sm-6
+                    p#salida

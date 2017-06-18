@@ -5,12 +5,21 @@
     <title>Proyecto final: Máquina de Turing</title>
     <script src="jquery-3.1.1.min.js"></script>
     <script src="turing.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
   </head>
   <body>
-    <h1>Máquina de Turing</h1>
-    <label for="cadena">Ingresa una cadena para validarla</label>
-    <input id="cadena" type="text">
-    <input id="ejecutar" type="button" value="Validar cadena">
-    <p id="salida"></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Máquina de Turing</h1>
+          <label for="cadena">Ingresa una cadena para validarla</label>
+          <input id="cadena" type="text">
+          <input class="btn btn-default" id="ejecutar" type="button" value="Validar cadena">
+        </div>
+        <div class="col-sm-6">
+          <p id="salida"></p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
